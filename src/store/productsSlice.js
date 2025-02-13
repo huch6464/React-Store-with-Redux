@@ -1,5 +1,6 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import Product from './../pages/Product';
 
  
 export const fetchData =
@@ -17,10 +18,15 @@ createAsyncThunk('products/fetchData',
     initialState:{
         productsList:[],
         status: 'idle',
-        error: null
+        error: null,
+        cartList: []
     },
 
-    reducers:{},
+    reducers:{
+        ADD_TO_CART:(state,action)=>{
+                state.cartList.push(action.payload)
+     },
+    },
     extraReducers:(builder)=>{
         builder
             .addCase(fetchData.pending,(state)=>{state.status = 'loading'})
@@ -33,8 +39,8 @@ createAsyncThunk('products/fetchData',
                 state.error = action.error.message;
             })
     }
-    }
-)
+    
+ } )
 
-
+export const {ADD_TO_CART} = productsSlice.actions
 export default productsSlice.reducer;
