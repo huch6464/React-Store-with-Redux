@@ -1,6 +1,6 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import Product from './../pages/Product';
+
 
  
 export const fetchData =
@@ -29,11 +29,22 @@ createAsyncThunk('products/fetchData',
                 state.cartList.push({...action.payload,quantity : 1})
             }else{
                 item.quantity += 1
-            }
-                
-            
+            } 
      },
+        REMOVE_FROM_CART:(state,action)=>{
+            state.cartList  =  state.cartList.filter((item)=>item.id !== action.payload.id)
+          
+        },
+        DECREMENT_QUANTITY:(state,action)=>{
+            const item = state.cartList.find(item=>item.id === action.payload.id)
+            if(item.quantity >1){
+                item.quantity -=1
+            }else if(item.quantity === 1){
+              state.cartList  =  state.cartList.filter((item)=>item.id !== action.payload.id)
+            }
+            }
     },
+
     extraReducers:(builder)=>{
         builder
             .addCase(fetchData.pending,(state)=>{state.status = 'loading'})
@@ -49,5 +60,5 @@ createAsyncThunk('products/fetchData',
     
  } )
 
-export const {ADD_TO_CART} = productsSlice.actions
+export const {ADD_TO_CART,REMOVE_FROM_CART,DECREMENT_QUANTITY} = productsSlice.actions
 export default productsSlice.reducer;
