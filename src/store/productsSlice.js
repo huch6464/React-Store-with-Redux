@@ -24,7 +24,14 @@ createAsyncThunk('products/fetchData',
 
     reducers:{
         ADD_TO_CART:(state,action)=>{
-                state.cartList.push(action.payload)
+            const item = state.cartList.find(item=>item.id === action.payload.id)
+            if(!item){
+                state.cartList.push({...action.payload,quantity : 1})
+            }else{
+                item.quantity += 1
+            }
+                
+            
      },
     },
     extraReducers:(builder)=>{

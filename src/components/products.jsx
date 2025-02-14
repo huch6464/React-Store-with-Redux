@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector,useDispatch } from 'react-redux';
 import { ADD_TO_CART, fetchData } from './../store/productsSlice';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 
 
@@ -31,10 +32,11 @@ export default function Products() {
       return(
         <div key={product.id} className='col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 text-center mb-2 ' >
         <div className="card h-100">
-            <img src="https://placehold.co/600x400" className="card-img-top" alt="..."/>
-          <div className="card-body d-flex flex-column justify-content-between">
+            <img src={product.image} className="card-img-top p-4" style={{height:'20rem'}} alt="..."/>
+          <div className="card-body d-flex flex-column justify-content-evenly">
             <h5 className="card-title">{product.title}</h5>
-            <p className="card-text">{product.price + ' ' +'$'}</p>
+            <p className="card-text h-25 overflow-auto">{product.description} </p>
+            <p className="card-text">{product.price} $</p>
             <button onClick={(Product)=>{dispatch(ADD_TO_CART(product))}} className="btn btn-primary">add to card</button>
           </div>
         </div>
@@ -55,6 +57,7 @@ export default function Products() {
           {list}
         </div>
     </div>
+    <Footer/>
     </>
   );
 }

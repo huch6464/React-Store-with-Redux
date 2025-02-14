@@ -3,19 +3,16 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar() {
  return(
-    <div>
-       <ul className="nav justify-content-center">
+    <div className=' position-sticky top-0 z-3'>
+       <ul className="nav d-flex justify-content-around bg-primary-subtle text-light-emphasis">
             <li className="nav-item">
-              <Link className="nav-link">Products</Link>
+              <Link to='/' className="nav-link text-light-emphasis">Products</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" >About This Project</Link>
+            <li className="nav-item ">
+              <Link className="nav-link text-light-emphasis" >About This Project </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" >Link</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to='/cart'>Shopping cart</Link>
+            <li className="nav-item ">
+              <Link to='/cart' className="nav-link text-light-emphasis">Shopping cart</Link>
             </li>
       </ul>
     </div>
