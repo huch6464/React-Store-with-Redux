@@ -5,6 +5,7 @@ import './App.css';
 import Products from './components/products';
 import Cart from './components/Cart';
 import Navbar from './components/Navbar';
+import AboutUs from './pages/AboutUs';
 
 
 
@@ -12,12 +13,11 @@ function App() {
   return (
     <>
     <Router>
-
     <Routes>
         <Route path='/' Component={Products}/>
         <Route path='/cart'  Component={Cart}/>
+        <Route path='/about' Component={AboutUs}/>
     </Routes>
-
   </Router>
   </>
   );

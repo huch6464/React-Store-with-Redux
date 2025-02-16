@@ -15,10 +15,10 @@ export default function Navbar() {
        <ul className="nav d-flex justify-content-around bg-primary-subtle text-light-emphasis">
             <li className="nav-item">
               
-              <Link to='/' className="nav-link text-light-emphasis">  <i className="material-icons royalblue me-2 "style={{verticalAlign:'-7px',color:'rgb(120, 120, 250)'}}>store</i>Products</Link>
+              <Link to='/' className="nav-link text-light-emphasis">  <i className="material-icons royalblue me-2 "style={{verticalAlign:'-7px',color:'rgb(120, 120, 250)'}}>store</i>Store</Link>
             </li>
             <li className="nav-item ">
-              <Link className="nav-link text-light-emphasis" ><i className="material-icons royalblue me-2 "style={{verticalAlign:'-7px',color:'rgb(120, 120, 250)'}}>help</i>About This Project </Link>
+              <Link to='/about' className="nav-link text-light-emphasis" ><i className="material-icons royalblue me-2 "style={{verticalAlign:'-7px',color:'rgb(120, 120, 250)'}}>help</i>About This Project </Link>
             </li>
             <li className="nav-item ">
               <Link to='/cart' className="nav-link text-light-emphasis position-relative">
