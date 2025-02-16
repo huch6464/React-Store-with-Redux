@@ -1,3 +1,30 @@
+you can see this project online [here](https://huch6464.github.io/React-Store-with-Redux).
+
+
+
+
+
+API fake for get prodocts : (https://fakestoreapi.com/products)
+
+[
+    {
+"id":1,
+"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,
+"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+"category":"men's clothing",
+"image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+"rating":{
+    "rate":3.9,
+    "count":120
+    }
+}
+]
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
