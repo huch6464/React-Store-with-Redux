@@ -4,22 +4,19 @@ import { Route,BrowserRouter as Router,Routes } from 'react-router-dom';
 import './App.css';
 import Products from './components/products';
 import Cart from './components/Cart';
-import Navbar from './components/Navbar';
 import AboutUs from './pages/AboutUs';
 
 
 
 function App() {
   return (
-    <>
     <Router>
     <Routes>
-        <Route path='/' Component={Products}/>
-        <Route path='/cart'  Component={Cart}/>
-        <Route path='/about' Component={AboutUs}/>
+        <Route path='/' element={<Products/>}/>
+        <Route path='/cart'  element={<Cart/>}/>
+        <Route path='/about' element={<AboutUs/>}/>
     </Routes>
   </Router>
-  </>
   );
 }
 
